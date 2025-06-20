@@ -5,7 +5,7 @@
 package Animales;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 
 /**
  *
@@ -16,7 +16,7 @@ public class Animal {
     private String idAnimal;
     private String nombre;
     private String especie;
-    private LocalDateTime fechas;
+    private LocalDate fechas;
     private zonasZoo zonas;
 
     public String getIdAnimal() {
@@ -31,7 +31,7 @@ public class Animal {
         return especie;
     }
 
-    public LocalDateTime getFechas() {
+    public LocalDate getFechas() {
         return fechas;
     }
 
@@ -39,7 +39,7 @@ public class Animal {
         return zonas;
     }
 
-    public void setFechas(LocalDateTime fechas) {
+    public void setFechas(LocalDate fechas) {
         this.fechas = fechas;
     }
 
@@ -47,7 +47,7 @@ public class Animal {
         this.zonas = zonas;
     }
 
-    public Animal(String idAnimal, String nombre, String especie, LocalDateTime fechas, String zona) {
+    public Animal(String idAnimal, String nombre, String especie, LocalDate fechas, String zona) {
 
         if (idAnimal != null && idAnimal.matches("^\\w{1}-\\d{4}$")) {
             this.idAnimal = idAnimal;
@@ -56,7 +56,7 @@ public class Animal {
         this.especie = especie;
         
         this.zonas = zonasZoo.ConservacionYRescate;
-        if (fechas != null && fechas.isAfter(LocalDateTime.now())){
+        if (fechas != null && !fechas.isAfter(LocalDate.now())){
             this.fechas = fechas;
         }
     }

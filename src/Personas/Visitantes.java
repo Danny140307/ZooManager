@@ -32,4 +32,8 @@ public class Visitantes extends Persona {
         return nombreCompleto + " (" + getEdad() + " años)";
     }
     
+    
+    
+    
+    
 }

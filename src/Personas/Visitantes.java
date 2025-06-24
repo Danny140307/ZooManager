@@ -4,52 +4,32 @@
  */
 package Personas;
 
+import Utils.Persona;
 import java.time.LocalDate;
 
 /**
  *
  * @author danny
  */
-public class Visitantes {
-    private String id;
-    private String nombre;
+public class Visitantes extends Persona {
     private String telefono;
-    private LocalDate fecha;
 
-    public String getId() {
-        return id;
-    }
-
-    public String getNombre() {
-        return nombre;
+    public Visitantes(String cedula, String nombreCompleto, LocalDate fechaNacimiento, String telefono) {
+        super(cedula, nombreCompleto, fechaNacimiento);
+        this.telefono = telefono;
     }
 
     public String getTelefono() {
         return telefono;
     }
 
-    public LocalDate getFecha() {
-        return fecha;
-    }
-
-    public void setTelefono(String telefono) {
-        if (telefono != null && telefono.matches("^\\d{2}-\\d{2}-\\d{2}-\\d{2}$")) {
-
-            this.telefono = telefono;
-        }
-    }
-
-    public Visitantes(String id, String nombre, String telefono, LocalDate fecha) {
-        this.id = id;
-        this.nombre = nombre;
-        this.telefono = telefono;
-        this.fecha = fecha;
+    public void modificarTelefono(String nuevoTelefono) {
+        
     }
 
     @Override
     public String toString() {
-        return "Visitantes{" + "id=" + id + ", nombre=" + nombre + ", telefono=" + telefono + ", fecha=" + fecha + '}';
+        return nombreCompleto + " (" + getEdad() + " años)";
     }
-    
     
 }
